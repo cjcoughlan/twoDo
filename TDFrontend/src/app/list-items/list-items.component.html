@@ -1,1 +1,12 @@
 <p>list-items works!</p>
+
+<ul class="list-items">
+    <li *ngFor="let item of listitems">
+        <div class="view">
+            <input type="checkbox" class="toggle" (click)="item.status = 'Done'">
+            <label>{{item.text}}</label>
+            <button class="delete"></button>
+        </div>
+        <input class="edit" value="{{item.text}}">
+    </li>
+</ul>
