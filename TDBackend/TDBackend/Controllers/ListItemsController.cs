@@ -83,7 +83,11 @@ namespace TDBackend.Controllers
             _context.ListItems.Add(listItem);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetListItem", new { id = listItem.Id }, listItem);
+            return CreatedAtAction(nameof(GetListItem), new { id = listItem.Id }, listItem);
+            //CreatedAtAction performse the following
+            //Returns 201 created if successful
+            //Adds location header to the response
+            //References the GetListItem action to get the location header's URI.  nameof keyword is used to avoid hardcoding the action name
         }
 
         // DELETE: api/ListItems/5
