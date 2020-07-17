@@ -1,1 +1,6 @@
 <p>add-list-item works!</p>
+<form action="">
+    <input [(ngModel)]="listItem.text" type="text" name="text">
+    <input [(ngModel)]="listItem.status" type="text" name="status">
+    <button (click)="this.post(listItem)">Add Item</button>
+</form>

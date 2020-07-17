@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ApiService } from '../api.service';
+
 @Component({
   selector: 'app-add-list-item',
   templateUrl: './add-list-item.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddListItemComponent implements OnInit {
 
-  constructor() { }
+  listItem: any = {};
+
+  constructor(public api : ApiService) { }
 
   ngOnInit(): void {
+  }
+
+  post(listItem){
+    this.api.postItem(listItem);
   }
 
 }

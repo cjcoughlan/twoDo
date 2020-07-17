@@ -10,8 +10,8 @@ import { AddListItemComponent } from './add-list-item/add-list-item.component'
 const routes: Routes = [
   { path: 'list', component: ListItemsComponent, data: { title: 'TwoDo List'}},
   { path: 'list-item-details', component: ListItemDetailsComponent, data: { title: 'Item Details'}},
-  { path: 'add-list-item', component: EditListItemComponent, data: { title: 'Add Items'}},
-  { path: 'edit-list-item', component: AddListItemComponent, data: { title: 'Edit Items'}}
+  { path: 'add-list-item', component: AddListItemComponent, data: { title: 'Add Items'}},
+  { path: 'edit-list-item', component: EditListItemComponent, data: { title: 'Edit Items'}}
 ];
 
 @NgModule({
