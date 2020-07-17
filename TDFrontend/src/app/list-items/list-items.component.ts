@@ -10,14 +10,19 @@ import { ApiService } from '../api.service';
 export class ListItemsComponent implements OnInit {
 
   public listitems;
+  public listitem;
   
   constructor(public api: ApiService) { }
 
   getItems(){
-    return this.api.get().then(items => {
+    return this.api.getAllItems().subscribe(items => {
       this.listitems = items;
     })
   }
+
+  putItem(listitem){
+    this.api.putItem(listitem);
+  }  
 
   ngOnInit(){
     this.getItems();
